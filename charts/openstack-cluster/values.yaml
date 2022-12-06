@@ -11,6 +11,9 @@ cloudCACert:
 # The name of the cloud to use from the specified clouds.yaml
 cloudName: openstack
 
+# infrastructure.cluster.x-k8s.io apiVersion
+infrastructureApiVersion: v1alpha6
+
 # The Kubernetes version of the cluster
 # This should match the version of kubelet and kubeadm in the image
 kubernetesVersion:
