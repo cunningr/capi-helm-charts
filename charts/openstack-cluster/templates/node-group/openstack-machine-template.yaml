@@ -10,7 +10,7 @@ template:
     identityRef:
       kind: Secret
       name: {{ include "openstack-cluster.cloudCredentialsSecretName" $ctx }}
-    cloudName: openstack
+    cloudName: {{ $ctx.Values.cloudName }}
     flavor: {{ $nodeGroup.machineFlavor | required (printf "no flavor specified for node group '%s'" $nodeGroup.name) }}
     {{- with $ctx.Values.machineSSHKeyName }}
     sshKeyName: {{ . }}

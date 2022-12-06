@@ -8,7 +8,7 @@ template:
     identityRef:
       kind: Secret
       name: {{ include "openstack-cluster.cloudCredentialsSecretName" . }}
-    cloudName: openstack
+    cloudName: {{ .Values.cloudName }}
     flavor: {{ .Values.controlPlane.machineFlavor | required ".Values.controlPlane.machineFlavor is required" }}
     {{- with .Values.machineSSHKeyName }}
     sshKeyName: {{ . }}
