@@ -1,3 +1,5 @@
+{{- if .Values.autoscaler.enabled }}
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -51,3 +53,4 @@ spec:
         - name: kubeconfig
           secret:
             secretName: {{ include "openstack-cluster.componentName" (list . "kubeconfig") }}
+{{- end }}

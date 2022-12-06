@@ -284,6 +284,8 @@ nodeGroups:
 
 # Configuration for the cluster autoscaler
 autoscaler:
+  # Enable/disable autoscaler
+  enabled: true
   # The image to use for the autoscaler component
   image:
     repository: k8s.gcr.io/autoscaling/cluster-autoscaler
