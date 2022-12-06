@@ -13,6 +13,12 @@ template:
     {{- with .Values.machineSSHKeyName }}
     sshKeyName: {{ . }}
     {{- end }}
+    {{- with .Values.controlPlane.configDrive }}
+    configDrive: {{ toYaml . }}
+    {{- end }}
+    {{- with .Values.controlPlane.securityGroups }}
+    securityGroups: {{ toYaml . | nindent 6 }}
+    {{- end }}
     {{- with .Values.controlPlane.machineRootVolume }}
     rootVolume: {{ toYaml . | nindent 6 }}
     {{- end }}
@@ -28,6 +34,9 @@ template:
     {{- end }}
     {{- with .Values.controlPlane.machineNetworking.ports }}
     ports: {{ toYaml . | nindent 6 }}
+    {{- end }}
+    {{- with .Values.controlPlane.serverGroupID }}
+    serverGroupID: {{ toYaml . | nindent 6 }}
     {{- end }}
 {{- end }}
 

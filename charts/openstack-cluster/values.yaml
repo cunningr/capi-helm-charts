@@ -141,6 +141,14 @@ controlPlane:
     # # The volume availability zone to use
     # # If not specified, the machine availability zone is used
     # availabilityZone:
+  # Configure the instance to use config-drive for instance metadata
+  configDrive: false
+  # Add security groups to the instance
+  securityGroups:
+  # List of security group names
+  # - name:
+  # openstack server group-id used for afinity scheduling rules
+  serverGroupID:
   # The time to wait for a node to finish draining before it can be removed
   nodeDrainTimeout: 5m
   # The rollout strategy to use for the control plane nodes
@@ -231,6 +239,10 @@ nodeGroupDefaults:
     # # If not specified, the machine availability zone is used
     # availabilityZone:
   # The time to wait for a node to finish draining before it can be removed
+  # Configure the instance to use config-drive for instance metadata
+  configDrive: false
+  # Openstack server group-id used for afinity scheduling rules
+  serverGroupID:
   nodeDrainTimeout: 5m
   # The rollout strategy to use for the node group
   # By default, this is set to do a rolling update within the existing resource envelope
