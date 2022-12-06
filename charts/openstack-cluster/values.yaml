@@ -43,6 +43,9 @@ kubeNetwork:
       - 172.24.0.0/13
   serviceDomain: cluster.local
 
+# Custom resource labels applied to the cluster object.
+customClusterLabels:
+
 # Settings for the OpenStack networking for the cluster
 clusterNetworking:
   # Custom nameservers to use for the hosts

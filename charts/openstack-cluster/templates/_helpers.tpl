@@ -22,6 +22,15 @@ Create chart name and version as used by the chart label.
 {{- end }}
 
 {{/*
+Custom cluster resource labels
+*/}}
+{{- define "custom.cluster-resources.labels" -}}
+{{- range $k, $v := .Values.customClusterLabels }}
+{{ $k }}: {{ $v }}
+{{- end -}}
+{{- end -}}
+
+{{/*
 Common labels
 */}}
 {{- define "openstack-cluster.commonLabels" -}}
